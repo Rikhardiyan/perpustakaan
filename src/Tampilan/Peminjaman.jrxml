@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="68d614f3-ce11-4f3e-87b0-6723dcd985e6">
+	<property name="ireport.zoom" value="1.1"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="KodePin" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT * FROM pinjam where kode_pinjam = $P{KodePin}]]>
+	</queryString>
+	<field name="kode_pinjam" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_siswa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kd_buku" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="judul_buku" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_pustakawan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_pustakawan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tanggal_pinjam" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tanggal_kembali" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jumlah_pinjam" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="554" height="79" forecolor="#006699" backcolor="#006699" uuid="4360adcb-df3d-4035-81c9-cd19704a862a"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="89" y="0" width="300" height="35" forecolor="#FFFFFF" uuid="890a8d12-6d12-4779-85d4-a091c192b676"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Times New Roman" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SDN 03 BALEKAMBANG]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="89" height="79" uuid="e777ca78-04dd-45a7-acda-02197d502a6a"/>
+				<imageExpression><![CDATA["C:\\Dev\\Perpustakaan\\src\\Img\\tut-wuri-handayani 200px.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="90" y="44" width="150" height="35" forecolor="#FFFFFF" uuid="d99af1ee-7ae6-4143-aa83-765cf3abe8a2"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<text><![CDATA[Peminjaman Buku]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="50" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="554" height="50" backcolor="#FFFFCC" uuid="033ebfb9-20c8-4257-9a0c-3faf0fdb5360"/>
+			</rectangle>
+			<textField>
+				<reportElement x="89" y="0" width="79" height="20" uuid="dddfa0ae-c382-49ca-97e8-5344f60197bd"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{kode_pinjam}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="79" height="20" uuid="5122b4ac-2805-458b-84f7-0917424269c8"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KD Pinjam :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="89" y="20" width="100" height="20" uuid="59648cfd-c172-4efc-99c4-a495c643979d"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{id_pustakawan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="20" width="77" height="20" uuid="194831e1-d351-4393-b94a-9c92afd4b59b"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID Pstkw :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="339" y="0" width="125" height="20" uuid="d7ec05de-645e-4c2b-a4a9-0a8b08fd83ef"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Pustakawan :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="479" y="0" width="75" height="20" uuid="3c5cee65-07cd-4033-97f2-a35d862d57cc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nama_pustakawan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="41" width="90" height="20" uuid="9210b03a-26cf-4130-8e0c-5b0e01bcacb7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NIS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="265" y="41" width="74" height="20" uuid="741cbd6e-e0da-4ad5-a274-37b4894f0e4b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Judul Buku]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="41" width="100" height="20" uuid="a1b82690-6fa1-406e-84e7-8ab7302d4db5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Siswa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="41" width="75" height="20" uuid="0b4e1ebb-79c2-4b58-bfef-5fcb65ef0401"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Buku]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="1" width="90" height="20" uuid="140f68d9-4a65-46fb-abec-b6f59c3ce000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="1" width="100" height="20" uuid="ee3e8fb4-b1fb-4b37-98ad-8a2f2a828524"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nama_siswa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="0" width="75" height="20" uuid="7319fd46-3849-4654-9f0f-0dc4e1b4582c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{kd_buku}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="265" y="0" width="74" height="20" uuid="8965a7fd-6638-464c-b6de-5a697657f554"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{judul_buku}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="2" y="21" width="552" height="1" uuid="f3fb06d8-8946-4773-b31d-ea791ca61fd8"/>
+			</line>
+		</band>
+	</detail>
+	<summary>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="-2" y="59" width="101" height="20" uuid="718ec9b3-3254-42e1-b7aa-38430b748aa9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jumlah Buku :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="99" y="59" width="54" height="20" uuid="a549e784-439a-402f-a473-176d996910d7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{jumlah_pinjam}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="38" width="98" height="20" uuid="9e0ac2f0-4942-4501-90e0-22463bd26388"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tanggal Kembali :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="99" y="0" width="100" height="20" uuid="f3f0318e-a96d-4f35-92dc-763a910d1b46"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tanggal_pinjam}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="99" y="38" width="100" height="20" uuid="6cbff157-a97b-4639-aa8c-0195fd96afb6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tanggal_kembali}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="0" width="98" height="20" uuid="26eb9693-0b1a-48a1-8fcd-ac2e67f55ad1"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tanggal Pinjam :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="3" y="30" width="551" height="1" uuid="0c5d5b16-17e7-4df6-94f0-c18c940bb48f"/>
+			</line>
+			<line>
+				<reportElement x="4" y="58" width="551" height="1" uuid="b7060a6a-bd84-4bec-a609-bb2f525e0216"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

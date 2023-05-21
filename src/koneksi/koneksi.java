@@ -18,10 +18,10 @@ public class koneksi {
         }catch( ClassNotFoundException ex){
             System.out.println("gagal connect"+ex);
         }
-        String url = "jdbc:mysql://localhost/perpustakaan";
+        String url = "jdbc:mysql://localhost/perpustakaan2";
         try{
             koneksi = DriverManager.getConnection(url, "root", "");
-            System.out.println("brhasil connect database");
+            System.out.println("berhasil connect database");
         }catch(SQLException ex) {
             System.out.println("gagal koneksi database"+ex);
         }
